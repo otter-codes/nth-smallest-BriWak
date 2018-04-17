@@ -6,7 +6,7 @@ object nthLargest {
 
     val uniqueNums = input.distinct.sorted
 
-    if (nth <= uniqueNums.length) {
+    if (nth <= uniqueNums.length && nth > 0) {
       uniqueNums(uniqueNums.length - nth)
     } else {
       throw new NumberNotPossibleException

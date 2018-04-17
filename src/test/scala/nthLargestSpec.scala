@@ -53,5 +53,17 @@ class nthLargestSpec extends WordSpec with MustMatchers {
         nthLargest(List(1, 2), 3)
       }
     }
+
+    "throw an error when given a list and a request for nth largest of 0" in {
+      intercept[NumberNotPossibleException] {
+        nthLargest(List(1, 2), 0)
+      }
+    }
+
+    "throw an error when given a list and a request for nth largest of a minus number" in {
+      intercept[NumberNotPossibleException] {
+        nthLargest(List(1, 2), -1)
+      }
+    }
   }
 }
